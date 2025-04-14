@@ -292,3 +292,21 @@
 	});		
 
 })(jQuery);
+
+// Ensure the intro video plays correctly
+document.addEventListener('DOMContentLoaded', function () {
+    const introVideo = document.getElementById('intro-video');
+    if (introVideo) {
+        introVideo.play().catch((error) => {
+            console.error('Error playing intro video:', error);
+        });
+    }
+
+    // Hide the loading icon once the page is fully loaded
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        window.addEventListener('load', function () {
+            preloader.style.display = 'none';
+        });
+    }
+});

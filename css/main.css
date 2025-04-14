@@ -444,19 +444,22 @@ img.pull-left {
  * ------------------------------------------------------------------- 
  */
 #preloader {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: #151515;
-	z-index: 800;
-	height: 100%;
-	width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #151515;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.no-js #preloader, .oldie #preloader {
-	display: none;
+
+#preloader.hidden {
+    display: none;
 }
+
 #loader {
 	position: absolute;
 	left: 50%;
