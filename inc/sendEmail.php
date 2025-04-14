@@ -13,7 +13,7 @@ try {
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = getenv('iamisaacyakubu3@gmail.com'); // Use environment variable for username
-    $mail->Password = getenv('oebo lbqz kzaf fwtc'); // Use environment variable for password
+    $mail->Password = getenv(''); // Use environment variable for password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
