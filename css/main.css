@@ -1443,6 +1443,20 @@ header .logo a {
 	}
 }
 
+/* Ensure images and videos are responsive */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Add specific styles for the intro video */
+.intro-video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 
 /** 
  * ===================================================================
