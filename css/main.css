@@ -1,7 +1,7 @@
 /**
  * =================================================================== 
  *
- *  Kards v1.0 Main Stylesheet
+ *  ISAAC 23 v1.0 Main Stylesheet
  *  url: styleshout.com
  *  03-01-2016
  *  ------------------------------------------------------------------
@@ -305,6 +305,7 @@ ul.disc li::before {
 	position: absolute;
 	left: -17px;
 	top: 11px;
+	vertical-align: middle;
 }
 dt {
 	margin: 0;
@@ -444,22 +445,19 @@ img.pull-left {
  * ------------------------------------------------------------------- 
  */
 #preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #151515;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #151515;
+	z-index: 800;
+	height: 100%;
+	width: 100%;
 }
-
-#preloader.hidden {
-    display: none;
+.no-js #preloader, .oldie #preloader {
+	display: none;
 }
-
 #loader {
 	position: absolute;
 	left: 50%;
@@ -526,6 +524,7 @@ select {
 	padding: 1.5rem 0;
 	border: 0;
 	outline: none;
+	vertical-align: middle;
 	color: #313131;
 	font-family: "poppins-regular", sans-serif;
 	font-size: 1.5rem;
@@ -967,8 +966,6 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 	background: #313131;
 	position: relative;
 	height: 100%;
-	width: 0;
-	transition: width 0.3s ease-in-out;
 }
 .skill-bars li .progress span {
 	position: absolute;
@@ -1297,90 +1294,129 @@ header .logo a {
  * ------------------------------------------------------------------- 
  */
 #intro {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+	background: #151515 url(../images/background\ intro.jpg) no-repeat center bottom;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
+	width: 100%;
+	height: 100%;
+	min-height: 720px;
+	display: table;
+	position: relative;
+	text-align: center;
 }
-
-#intro-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
 .intro-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #111111;
+	opacity: .85;
 }
 
 .intro-content {
-    position: relative;
-    z-index: 1;
-    color: #fff;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	-webkit-transform: translateY(-2.1rem);
+	-ms-transform: translateY(-2.1rem);
+	transform: translateY(-2.1rem);
+}
+.intro-content h1 {
+	color: #FFFFFF;
+	font-family: "poppins-medium", sans-serif;
+	font-size: 8.4rem;
+	line-height: 1.071;
+	max-width: 900px;
+	margin-top: 0;
+	margin-bottom: .6rem;
+	margin-left: auto;
+	margin-right: auto;
+	text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.intro-content h5 {
+	color: #cc005f;
+	font-family: "poppins-bold", sans-serif;
+	font-size: 2.3rem;
+	line-height: 1.565;
+	margin-bottom: 0;
+	text-transform: uppercase;
+	letter-spacing: .3rem;
+	text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+.intro-content .intro-position {
+	font-family: "lora-regular", serif;
+	font-size: 1.7rem;
+	line-height: 2.4rem;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	color: #FFFFFF;
+	text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+.intro-content .intro-position span {
+	display: inline-block;
+}
+.intro-content .intro-position span::after {
+	content: "|";
+	text-align: center;
+	display: inline-block;
+	padding: 0 8px 0 14px;
+	color: rgba(255, 255, 255, 0.3);
+}
+.intro-content .intro-position span:first-child::before {
+	content: "|";
+	text-align: center;
+	display: inline-block;
+	padding: 0 14px 0 8px;
+	color: rgba(255, 255, 255, 0.3);
+}
+.intro-content .button {
+	color: #FFFFFF !important;
+	border-color: rgba(255, 255, 255, 0.3);
+	height: 6rem !important;
+	line-height: 5.4rem !important;
+	padding: 0 3.5rem 0 3rem !important;
+	margin-top: .6rem;
+	font-size: 1.3rem;
+	text-transform: uppercase;
+	letter-spacing: .25rem;
+}
+.intro-content .button:hover, .intro-content .button:focus {
+	border-color: #cc005f;
+}
+.intro-content .button::after {
+	display: inline-block;
+	content: "\f107";
+	font-family: fontAwesome;
+	font-size: 1.6rem;
+	line-height: inherit;
+	text-align: center;
+	position: relative;
+	left: 1.2rem;
 }
 
-#intro h5 {
-    font-size: 1.5rem; /* Increased font size */
-    letter-spacing: 0.5rem; /* Added spacing for stretching */
-    color: pink; /* Changed color for "Hello, World." */
+.intro-social {
+	display: block;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 7.2rem;
+	font-size: 3.3rem;
+	margin: 0;
+	padding: 0;
 }
-
-#intro h1 {
-    font-size: 7rem; /* Increased font size */
-    letter-spacing: 0.3rem; /* Added spacing for stretching */
-    color: rgb(220, 44, 144); /* Changed color for "I am Isaac Yakubu." */
-	font-weight: bold; /* Makes 'I am Isaac Yakubu.' bold */
-	margin-bottom: 1rem; /* Added margin for spacing */
-    white-space: nowrap; /* Ensures the text stays on one line */
-    text-align: center; /* Centers the text */
+.intro-social li {
+	display: inline-block;
+	margin: 0 20px;
+	padding: 0;
 }
-
-#intro .intro-position {
-    font-size: 2rem; /* Increased font size */
-    letter-spacing: 0.3rem; /* Added spacing for stretching */
-    color: rgb(181, 50, 181); /* Changed color for "Front-end Engineer Web Designer" */
-    font-weight: bold; /* Makes 'Front-end Engineer Web Designer' bold */
+.intro-social li a, .intro-social li a:visited {
+	color: #FFFFFF;
 }
-
-#intro .intro-social {
-    position: absolute;
-    bottom: 20px;
-    left: 49%;
-    transform: translateX(-50%);
-    z-index: 1;
-    display: flex;
-    gap: 30px; /* Added spacing between social icons */
-}
-
-#intro .intro-social li {
-    list-style: none;
-}
-
-#intro .intro-social li a {
-    color: #fff;
-    font-size: 30px; /* Increased font size for social icons */
-    transition: color 0.3s ease;
-}
-
-#intro .intro-social li a:hover {
-    color: #FF0077;
-}
-
-#intro .button.stroke.smoothscroll {
-    margin-top: 3rem; /* Added margin to move the 'More About Me' button down */
+.intro-social li a:hover, .intro-social li a:focus {
+	color: #cc005f;
 }
 
 /**
@@ -1444,20 +1480,6 @@ header .logo a {
 	.intro-social {
 		font-size: 2.4rem;
 	}
-}
-
-/* Ensure images and videos are responsive */
-img, video {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Add specific styles for the intro video */
-.intro-video {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
 }
 
 
@@ -1534,13 +1556,12 @@ img, video {
 
 .button-section {
 	text-align: center;
-	margin-top: 50rem; /* Added margin to bring the 'About Me' button down */
 }
 .button-section .button {
 	width: 250px;
 }
 .button-section [class*="col-"] .button:first-child {
-	margin-right: 5rem;
+	margin-right: 4rem;
 }
 
 /**
@@ -1785,20 +1806,6 @@ img, video {
 	-webkit-transition: all 0.5s ease-in-out;
 	-ms-transition: all 0.5s ease-in-out;
 	transition: all 0.5s ease-in-out;
-}
-
-/* Fixing white spaces for Yukima App image */
-#folio-wrapper .folio-item img {
-    object-fit: cover;
-    width: 100%;
-    height: auto;
-}
-
-/* Fixing white spaces for modal-05 image */
-#modal-06 .media img {
-    object-fit: cover;
-    width: 100%;
-    height: auto;
 }
 
 #portfolio .overlay {
@@ -2088,7 +2095,7 @@ img, video {
  * ------------------------------------------------------------------- 
  */
 #services {
-	background: #313131 url(../images/bg.jpg) no-repeat center;
+	background: #313131 url(../images/services\ background.jpg) no-repeat center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;

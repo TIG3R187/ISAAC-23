@@ -1,43 +1,69 @@
 ﻿<?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
-require_once __DIR__ . '/vendor/autoload.php'; // Ensure PHPMailer is autoloaded
+// Replace this with your own email address
+$siteOwnersEmail = 'iamisaacyakubu@outlook.com';
 
-$mail = new PHPMailer(true);
 
-try {
-    // Server settings
-    $mail->SMTPDebug = 0; // Set to 0 to suppress debug output
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = getenv('iamisaacyakubu3@gmail.com'); // Use environment variable for username
-    $mail->Password = getenv(''); // Use environment variable for password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
+if($_POST) {
 
-    // Recipients
-    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-    $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
-    $subject = filter_var($_POST['subject'], FILTER_SANITIZE_STRING);
-    $message = htmlspecialchars($_POST['message']);
-    $siteOwnersEmail = getenv('iamisaacyakubu3@gmail.com'); // Use environment variable for recipient email
+   $name = trim(stripslashes($_POST['contactName']));
+   $email = trim(stripslashes($_POST['contactEmail']));
+   $subject = trim(stripslashes($_POST['contactSubject']));
+   $contact_message = trim(stripslashes($_POST['contactMessage']));
 
-    $mail->setFrom($email, $name);
-    $mail->addAddress($siteOwnersEmail);
-    $mail->addReplyTo($email, $name);
+   // Check Name
+	if (strlen($name) < 2) {
+		$error['name'] = "Please enter your name.";
+	}
+	// Check Email
+	if (!preg_match('/^[a-z0-9&\'\.\-_\+]+@[a-z0-9\-]+\.([a-z0-9\-]+\.)*+[a-z]{2}/is', $email)) {
+		$error['email'] = "Please enter a valid email address.";
+	}
+	// Check Message
+	if (strlen($contact_message) < 15) {
+		$error['message'] = "Please enter your message. It should have at least 15 characters.";
+	}
+   // Subject
+	if ($subject == '') { $subject = "Contact Form Submission"; }
 
-    // Content
-    $mail->isHTML(true);
-    $mail->Subject = $subject;
-    $mail->Body = $message;
 
-    $mail->send();
-    echo "OK";
-} catch (Exception $e) {
-    error_log("Mailer Error: " . $mail->ErrorInfo); // Log the error for debugging
-    echo "An error occurred. Please try again later."; // Generic error message for users
-} finally {
-    $mail->smtpClose(); // Correct method to close the SMTP connection
+   // Set Message
+   $message .= "Email from: " . $name . "<br />";
+	$message .= "Email address: " . $email . "<br />";
+   $message .= "Message: <br />";
+   $message .= $contact_message;
+   $message .= "<br /> ----- <br /> This email was sent from your site's contact form. <br />";
+
+   // Set From: header
+   $from =  $name . " <" . $email . ">";
+
+   // Email Headers
+	$headers = "From: " . $from . "\r\n";
+	$headers .= "Reply-To: ". $email . "\r\n";
+ 	$headers .= "MIME-Version: 1.0\r\n";
+	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+
+   if (!$error) {
+
+      ini_set("sendmail_from", $siteOwnersEmail); // for windows server
+      $mail = mail($siteOwnersEmail, $subject, $message, $headers);
+
+		if ($mail) { echo "OK"; }
+      else { echo "Something went wrong. Please try again."; }
+		
+	} # end if - no validation error
+
+	else {
+
+		$response = (isset($error['name'])) ? $error['name'] . "<br /> \n" : null;
+		$response .= (isset($error['email'])) ? $error['email'] . "<br /> \n" : null;
+		$response .= (isset($error['message'])) ? $error['message'] . "<br />" : null;
+		
+		echo $response;
+
+	} # end if - there was a validation error
+
 }
+
+?>

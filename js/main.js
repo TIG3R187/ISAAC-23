@@ -191,22 +191,19 @@
   	/* Smooth Scrolling
   	------------------------------------------------------ */
   	$('.smoothscroll').on('click', function (e) {
-		// Skip links with target="_blank"
-		if ($(this).attr('target') === '_blank') {
-			return;
-		}
-	
-		e.preventDefault();
-	
-		var target = this.hash,
-			$target = $(target);
-	
-		$('html, body').stop().animate({
-			'scrollTop': $target.offset().top
-		}, 800, 'swing', function () {
-			window.location.hash = target;
-		});
-	});
+	 	
+	 	e.preventDefault();
+
+   	var target = this.hash,
+    	$target = $(target);
+
+    	$('html, body').stop().animate({
+       	'scrollTop': $target.offset().top
+      }, 800, 'swing', function () {
+      	window.location.hash = target;
+      });
+
+  	});  
   
 
    /*---------------------------------------------------- */
@@ -292,21 +289,3 @@
 	});		
 
 })(jQuery);
-
-// Ensure the intro video plays correctly
-document.addEventListener('DOMContentLoaded', function () {
-    const introVideo = document.getElementById('intro-video');
-    if (introVideo) {
-        introVideo.play().catch((error) => {
-            console.error('Error playing intro video:', error);
-        });
-    }
-
-    // Hide the loading icon once the page is fully loaded
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        window.addEventListener('load', function () {
-            preloader.style.display = 'none';
-        });
-    }
-});
