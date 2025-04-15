@@ -1,29 +1,31 @@
-# My Portfolio
+# 🚀 ISAAC'23 Portfolio  
 
-## Overview
-Welcome to my portfolio! This website showcases my work, skills, and achievements. Whether you're a recruiter, collaborator, or just curious, feel free to explore and connect.
+## 👨‍💻 About Me  
+Hey there! I'm **Isaac**, a creative **Front-End Developer** passionate about designing sleek, user-friendly web experiences. I specialize in **HTML, CSS, JavaScript, Node.js, React & ReactNative, Phaser.js and PHP**, turning ideas into visually stunning and highly functional websites. 😎🔥 
 
-## Features
-- **About Me** – Learn more about my background and experience.
-- **Projects** – A collection of my work, including descriptions and links.
-- **Skills** – Technologies and expertise I bring to the table.
-- **Contact** – Ways to get in touch with me.
+## 🛠️ Technologies Used  
+- **⚡ HTML & CSS** – Crafting clean, responsive designs.  
+- **🎨 JavaScript** – Adding interactivity and smooth UI enhancements.  
+- **🖥️ PHP** – Managing back-end functionalities for dynamic applications.  
 
-  
-## Technologies Used
-- HTML, CSS, JavaScript, PHP
-- Responsive Design for all devices
+## 🌟 Features  
+✅ Modern & responsive design  
+✅ Smooth animations & transitions  
+✅ Optimized for performance & accessibility  
+✅ Scalable & maintainable code  
 
-## Contributing
-This portfolio is a personal project, but suggestions and feedback are always welcome!
+## 📧 Contact  
+📩 Email: **[iamisaacyakubu@outlook.com](mailto:iamisaacyakubu@outlook.com)**  
 
-## License## License
-This project is proprietary. Unauthorized use, distribution, or duplication without permission is strictly prohibited.
+## ⚠️ License  
+**❌ No Permission Granted**  
 
-## Contact
-Feel free to connect with me via:
-- **Email**: [Iamisaacyakubu@outlook.com ]
-- **LinkedIn**: [https://www.linkedin.com/in/isaac-yakubu-511292341/]
-- **GitHub**: [github.com/TIG3R187]
+This project is **strictly proprietary**.  
+- **🚫 No copying** – You are NOT allowed to duplicate or reproduce any part of this project.  
+- **🚫 No modification** – Alterations or derivative works are NOT permitted.  
+- **🚫 No distribution** – Sharing or redistributing this content in any form is STRICTLY PROHIBITED.  
+- **🚫 No commercial use** – This project CANNOT be used for any commercial or profit-driven purposes.  
 
-Looking forward to working with you! 🚀
+Unauthorized use of this code or design may result in **legal consequences**. If you have questions regarding usage, **do not** assume permission—reach out first.  
+
+
