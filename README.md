@@ -48,7 +48,6 @@ Stock Photos and Graphics:
  - Graphics were created by me using softwares:
  - CorelDraw
  - Abobe Photoshop
- - figma
  
 Javascript Files:
 
